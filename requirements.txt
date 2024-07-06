@@ -1,0 +1,7 @@
+PyPDF2
+pandas
+dotenv
+langchain
+langchain-core
+langchain-google-genai
+langchain-openai

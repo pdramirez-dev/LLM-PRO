@@ -1,0 +1,113 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "PyPDF2",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PyPDF2",
+        "description": "PyPDF2",
+        "detail": "PyPDF2",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "HumanMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "SystemMessage",
+        "importPath": "langchain_core.messages",
+        "description": "langchain_core.messages",
+        "isExtraImport": true,
+        "detail": "langchain_core.messages",
+        "documentation": {}
+    },
+    {
+        "label": "ChatPromptTemplate",
+        "importPath": "langchain_core.prompts",
+        "description": "langchain_core.prompts",
+        "isExtraImport": true,
+        "detail": "langchain_core.prompts",
+        "documentation": {}
+    },
+    {
+        "label": "ChatOpenAI",
+        "importPath": "langchain_openai",
+        "description": "langchain_openai",
+        "isExtraImport": true,
+        "detail": "langchain_openai",
+        "documentation": {}
+    },
+    {
+        "label": "load_dotenv",
+        "importPath": "dotenv",
+        "description": "dotenv",
+        "isExtraImport": true,
+        "detail": "dotenv",
+        "documentation": {}
+    },
+    {
+        "label": "pdf_extract",
+        "importPath": "lib",
+        "description": "lib",
+        "isExtraImport": true,
+        "detail": "lib",
+        "documentation": {}
+    },
+    {
+        "label": "extraer_texto",
+        "kind": 2,
+        "importPath": "lib.pdf_extract",
+        "description": "lib.pdf_extract",
+        "peekOfCode": "def extraer_texto(pdf_path):\n    with open(pdf_path, 'rb') as file:\n        reader = PyPDF2.PdfReader(file)\n        text = ''\n        for page in reader.pages:\n            text += page.extract_text() if page.extract_text() else ''\n    return text\n# Función para enviar el texto a OpenAI y obtener la dirección",
+        "detail": "lib.pdf_extract",
+        "documentation": {}
+    },
+    {
+        "label": "processTextToLLM",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def processTextToLLM(texto):\n    model = ChatOpenAI(\n        api_key=_api_key, \n        temperature=0.5, \n        model=\"gpt-4-turbo\")\n    prompt = ChatPromptTemplate.from_messages(\n        [\n            (\n                \"system\",\n                \"Message \",",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "_api_key",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "_api_key = os.getenv[\"OPENAI_API_KEY\"]\ndef processTextToLLM(texto):\n    model = ChatOpenAI(\n        api_key=_api_key, \n        temperature=0.5, \n        model=\"gpt-4-turbo\")\n    prompt = ChatPromptTemplate.from_messages(\n        [\n            (\n                \"system\",",
+        "detail": "app",
+        "documentation": {}
+    }
+]
